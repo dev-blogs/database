@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import java.util.HashSet;
 import java.util.Set;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -27,12 +28,14 @@ public class TestProvider extends AbstractJUnit4SpringContextTests {
 	 * Тест хранимой функции
 	 */
 	@Test
+	@Ignore
 	public void testStoredFunction() {
 		String name = providerSFDao.getNameById(1l);
 		assertEquals(name, "Vasya");
 	}
 	
 	@Test
+	@Ignore
 	public void testInsertProviderWithItems() {
 		// Создать тестовый объект Provider
 		Provider provider = new Provider();

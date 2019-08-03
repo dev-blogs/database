@@ -3,6 +3,7 @@ package com.dev.blogs.dao.impl;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,7 +32,8 @@ public class WarehouseDaoImpl implements WarehouseDao {
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
 	public List<Warehouse> findAll() {
-		return namedParameterJdbcTemplate.query(SQL_FIND_ALL, new RowMapper<Warehouse>() {
+		
+		return namedParameterJdbcTemplate.query(SQL_FIND_ALL, Collections.EMPTY_MAP, new RowMapper<Warehouse>() {
 			public Warehouse mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Warehouse warehouse = new Warehouse();
 				warehouse.setId(rs.getLong(Warehouse.ID_COLUMN));
@@ -42,7 +44,7 @@ public class WarehouseDaoImpl implements WarehouseDao {
 	}
 
 	public List<Warehouse> findWarehousesWithItems() {
-		return namedParameterJdbcTemplate.query(SQL_FIND_WAREHOUSES_WITH_ITEMS, new ResultSetExtractor<List<Warehouse>>() {
+		return namedParameterJdbcTemplate.query(SQL_FIND_WAREHOUSES_WITH_ITEMS, Collections.EMPTY_MAP, new ResultSetExtractor<List<Warehouse>>() {
 			public List<Warehouse> extractData(ResultSet rs) throws SQLException, DataAccessException {
 				Map<Long, Warehouse> map = new HashMap<Long, Warehouse>();
 				Warehouse warehouse = null;

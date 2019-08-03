@@ -1,7 +1,3 @@
-CREATE DATABASE warehouse CHARACTER SET utf8;
- 
-USE warehouse;
-
 CREATE TABLE warehouses (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     address VARCHAR(255) NOT NULL,

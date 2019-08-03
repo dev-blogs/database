@@ -1,5 +1,3 @@
-USE warehouse;
-
 INSERT INTO warehouses (address) VALUES ('ul. Yaltinskaya, 5');
 INSERT INTO warehouses (address) VALUES ('ul. Krymskoy vesny, 4');
 INSERT INTO warehouses (address) VALUES ('ul. Moskovskaya, 7');

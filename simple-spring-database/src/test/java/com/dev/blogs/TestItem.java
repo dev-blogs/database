@@ -2,14 +2,17 @@ package com.dev.blogs;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
+
 import com.dev.blogs.dao.ItemDao;
 import com.dev.blogs.model.Item;
 
-@ContextConfiguration("classpath:spring/spring-context.xml")
+@ContextConfiguration("classpath:/spring/spring-context.xml")
 public class TestItem extends AbstractJUnit4SpringContextTests {
 	@Autowired
 	private ItemDao itemDao;

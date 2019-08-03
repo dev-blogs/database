@@ -1,5 +1,3 @@
-USE warehouse;
-
 DELIMITER //
 CREATE FUNCTION getNameById(in_id INT)
 	RETURNS VARCHAR(60)
